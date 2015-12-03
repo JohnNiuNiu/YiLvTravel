@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "me.yilv.yilvtravel"
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 102
+        versionName "1.0.2"
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "YiLv"]
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    productFlavors {
+        DEBUG {}
+        TEST {}
+        YiLv {}
+    }
+
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile files('libs/umeng-update-v2.6.0.1.jar')
+    compile files('libs/universal-image-loader-1.9.3.jar')
+}

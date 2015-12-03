@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">驿驴旅游</string>
+    <string name="net_error_msg">亲，加载失败请检查网络</string>
+    <!--exit toask msg-->
+    <string name="exit_toast_msg">再按一次退出%1$s</string>
+</resources>

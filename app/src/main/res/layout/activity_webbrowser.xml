@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <WebView
+        android:id="@+id/browser_wv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none"></WebView>
+
+    <!--Notice:in RelativeLayout,progressBar location is below of webview-->
+    <ProgressBar
+        android:id="@+id/web_loading_pb"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <include layout="@layout/common_net_error2"></include>
+
+</RelativeLayout>
